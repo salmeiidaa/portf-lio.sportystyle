@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Camisas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Oswald&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #f4f4f4;
+    color: #10395b;
+  }
+  header {
+    background-color: #10395b;
+    color: #a6a6a6;
+    padding: 25px;
+    text-align: center;
+  }
+  header img {
+    width: 290px;
+    margin-bottom: 15px;
+  }
+  header .logo {
+    font-size: 30px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+  }
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .produto {
+    padding: 30px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    position: relative;
+  }
+  .produto:last-child {
+    border-bottom: none;
+  }
+  .produto img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .produto h3 {
+    font-size: 26px;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 15px;
+  }
+  .produto p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  .preco {
+    font-weight: bold;
+    color: #10395b;
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+
+  .selecao {
+    text-align: left;
+    position: absolute;
+    left: 15px;
+    bottom: 90px;
+  }
+  .selecao strong {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .opcoes {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .opcao-btn {
+    padding: 6px 12px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+  }
+  .opcao-btn:hover {
+    background-color: #ddd;
+  }
+  .opcao-btn.ativo {
+    background-color: #10395b;
+    color: white;
+    border-color: #10395b;
+  }
+  .disponibilidade {
+    font-size: 12px;
+    color: #10395b;
+    margin-bottom: 10px;
+    max-width: 200px;
+  }
+
+  .comprar-btn {
+    background-color: #10395b;
+    color: white;
+    padding: 18px 50px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    transition: background-color 0.3s ease;
+  }
+  .comprar-btn:hover {
+    background-color: #082136;
+  }
+
+  @media (max-width: 600px) {
+    .selecao {
+      position: static;
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="https://i.postimg.cc/x1ks3Ckv/logocinza-quadrada.png" alt="Logo da Loja">
+  <div class="logo">Catálogo de Camisas</div>
+</header>
+
+<div class="container">
+
+  <!-- PRODUTO EXEMPLO -->
+  <!-- Copie e edite este bloco para cada camisa -->
+  <div class="produto" data-produto="tricolor">
+    <img src="https://i.postimg.cc/zGcBHq6H/tricolor.jpg" alt="Camisa Tricolor">
+    <h3>Camisa Tricolor</h3>
+    <p>Modelo clássico, tecido leve, escudo bordado e acabamento premium.</p>
+    <div class="preco">R$ 229,90</div>
+
+    <!-- Seção de seleção de gênero e tamanho -->
+    <div class="selecao">
+      <strong>Gênero:</strong>
+      <div class="opcoes genero" data-produto="tricolor">
+        <div class="opcao-btn" data-genero="Masculina">Masc.</div>
+        <div class="opcao-btn" data-genero="Feminina">Fem.</div>
+      </div>
+
+      <strong>Tamanho:</strong>
+      <div class="opcoes tamanho" data-produto="tricolor">
+        <div class="opcao-btn" data-tamanho="P">P</div>
+        <div class="opcao-btn" data-tamanho="M">M</div>
+        <div class="opcao-btn" data-tamanho="G">G</div>
+        <div class="opcao-btn" data-tamanho="GG">GG</div>
+      </div>
+    </div>
+
+    <button class="comprar-btn">Comprar</button>
+  </div>
+
+  <!-- Repita o bloco acima para os outros produtos -->
+  
+  <!-- Produto 2 -->
+  <div class="produto" data-produto="amarela">
+    <img src="https://i.postimg.cc/CKnKjWpP/amarela.jpg" alt="Camisa Amarela">
+    <h3>Camisa Amarela</h3>
+    <p>Camisa vibrante, ideal para os dias ensolarados. Tecnologia dry fit.</p>
+    <div class="preco">R$ 199,90</div>
+
+    <div class="selecao">
+      <strong>Gênero:</strong>
+      <div class="opcoes genero" data-produto="amarela">
+        <div class="opcao-btn" data-genero="Masculina">Masc.</div>
+        <div class="opcao-btn" data-genero="Feminina">Fem.</div>
+      </div>
+
+      <strong>Tamanho:</strong>
+      <div class="opcoes tamanho" data-produto="amarela">
+        <div class="opcao-btn" data-tamanho="P">P</div>
+        <div class="opcao-btn" data-tamanho="M">M</div>
+        <div class="opcao-btn" data-tamanho="G">G</div>
+        <div class="opcao-btn" data-tamanho="GG">GG</div>
+      </div>
+    </div>
+
+    <button class="comprar-btn">Comprar</button>
+  </div>
+
+  <!-- Produto 3 -->
+  <div class="produto" data-produto="branca-puma">
+    <img src="https://i.postimg.cc/rm6wgQ88/branca-puma.jpg" alt="Camisa Branca Puma">
+    <h3>Camisa Branca Puma</h3>
+    <p>Modelo clean, confortável, com logo bordado e tecido respirável.</p>
+    <div class="preco">R$ 219,90</div>
+
+    <div class="selecao">
+      <strong>Gênero:</strong>
+      <div class="opcoes genero" data-produto="branca-puma">
+        <div class="opcao-btn" data-genero="Masculina">Masc.</div>
+        <div class="opcao-btn" data-genero="Feminina">Fem.</div>
+      </div>
+
+      <strong>Tamanho:</strong>
+      <div class="opcoes tamanho" data-produto="branca-puma">
+        <div class="opcao-btn" data-tamanho="P">P</div>
+        <div class="opcao-btn" data-tamanho="M">M</div>
+        <div class="opcao-btn" data-tamanho="G">G</div>
+        <div class="opcao-btn" data-tamanho="GG">GG</div>
+      </div>
+    </div>
+
+    <button class="comprar-btn">Comprar</button>
+  </div>
+
+  <!-- Produto 4 -->
+  <div class="produto" data-produto="tricolor-antiga">
+    <img src="https://i.postimg.cc/pTDXSzTK/tricolor-antiga.jpg" alt="Camisa Tricolor Antiga">
+    <h3>Camisa Tricolor Antiga</h3>
+    <p>Edição retrô, perfeita para colecionadores. Alta qualidade e durabilidade.</p>
+    <div class="preco">R$ 239,90</div>
+
+    <div class="selecao">
+      <strong>Gênero:</strong>
+      <div class="opcoes genero" data-produto="tricolor-antiga">
+        <div class="opcao-btn" data-genero="Masculina">Masc.</div>
+        <div class="opcao-btn" data-genero="Feminina">Fem.</div>
+      </div>
+
+      <strong>Tamanho:</strong>
+      <div class="opcoes tamanho" data-produto="tricolor-antiga">
+        <div class="opcao-btn" data-tamanho="P">P</div>
+        <div class="opcao-btn" data-tamanho="M">M</div>
+        <div class="opcao-btn" data-tamanho="G">G</div>
+        <div class="opcao-btn" data-tamanho="GG">GG</div>
+      </div>
+    </div>
+
+    <button class="comprar-btn">Comprar</button>
+  </div>
+
+  <!-- Produto 5 -->
+  <div class="produto" data-produto="azul">
+    <img src="https://i.postimg.cc/66fpLrFX/azul.jpg" alt="Camisa Azul">
+    <h3>Camisa Azul</h3>
+    <p>Camisa diferenciada, tecido leve e toque macio. Perfeita para qualquer ocasião.</p>
+    <div class="preco">R$ 209,90</div>
+
+    <div class="selecao">
+      <strong>Gênero:</strong>
+      <div class="opcoes genero" data-produto="azul">
+        <div class="opcao-btn" data-genero="Masculina">Masc.</div>
+        <div class="opcao-btn" data-genero="Feminina">Fem.</div>
+      </div>
+
+      <strong>Tamanho:</strong>
+      <div class="opcoes tamanho" data-produto="azul">
+        <div class="opcao-btn" data-tamanho="P">P</div>
+        <div class="opcao-btn" data-tamanho="M">M</div>
+        <div class="opcao-btn" data-tamanho="G">G</div>
+        <div class="opcao-btn" data-tamanho="GG">GG</div>
+      </div>
+    </div>
+
+    <button class="comprar-btn">Comprar</button>
+  </div>
+
+  <!-- Produto 6 -->
+  <div class="produto" data-produto="branca-listra">
+    <img src="https://i.postimg.cc/zXDXdL1R/branca-com-listra.jpg" alt="Camisa Branca com Listra">
+    <h3>Camisa Branca com Listra</h3>
+    <p>Design elegante com listras, tecido dry fit e costura reforçada.</p>
+    <div class="preco">R$ 219,90</div>
+
+    <div class="selecao">
+      <strong>Gênero:</strong>
+      <div class="opcoes genero" data-produto="branca-listra">
+        <div class="opcao-btn" data-genero="Masculina">Masc.</div>
+        <div class="opcao-btn" data-genero="Feminina">Fem.</div>
+      </div>
+
+      <strong>Tamanho:</strong>
+      <div class="opcoes tamanho" data-produto="branca-listra">
+        <div class="opcao-btn" data-tamanho="P">P</div>
+        <div class="opcao-btn" data-tamanho="M">M</div>
+        <div class="opcao-btn" data-tamanho="G">G</div>
+        <div class="opcao-btn" data-tamanho="GG">GG</div>
+      </div>
+    </div>
+
+    <button class="comprar-btn">Comprar</button>
+  </div>
+
+</div>
+
+<script>
+// Seletor de opções
+document.querySelectorAll('.genero').forEach(generoGroup => {
+  generoGroup.addEventListener('click', e => {
+    if (e.target.classList.contains('opcao-btn')) {
+      generoGroup.querySelectorAll('.opcao-btn').forEach(btn => btn.classList.remove('ativo'));
+      e.target.classList.add('ativo');
+    }
+  });
+});
+
+document.querySelectorAll('.tamanho').forEach(tamGroup => {
+  tamGroup.addEventListener('click', e => {
+    if (e.target.classList.contains('opcao-btn')) {
+      tamGroup.querySelectorAll('.opcao-btn').forEach(btn => btn.classList.remove('ativo'));
+      e.target.classList.add('ativo');
+    }
+  });
+});
+
+// Botão WhatsApp
+document.querySelectorAll('.comprar-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const produtoDiv = btn.closest('.produto');
+    const nomeProduto = produtoDiv.querySelector('h3').innerText;
+
+    const genero = produtoDiv.querySelector('.genero .opcao-btn.ativo');
+    const tamanho = produtoDiv.querySelector('.tamanho .opcao-btn.ativo');
+
+    if (!genero || !tamanho) {
+      alert('Por favor, selecione gênero e tamanho antes de comprar.');
+      return;
+    }
+
+    const generoTexto = genero.dataset.genero;
+    const tamanhoTexto = tamanho.dataset.tamanho;
+
+    const mensagem = `Olá, gostaria de adquirir a camisa ${generoTexto} ${nomeProduto} no tamanho ${tamanhoTexto}. Qual a disponibilidade de entrega?`;
+
+    // Coloque aqui o seu número do WhatsApp no formato DDI+DDD+Número (sem + ou espaços)
+    const numero = '5571991274394';
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
+  });
+});
+</script>
+
+</body>
+</html>
